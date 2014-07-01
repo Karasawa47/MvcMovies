@@ -17,6 +17,12 @@ namespace MvcMovies.Models
         // GET: Movies
         public ActionResult Index()
         {
+            var GenreListing = new List<string>();
+            var DistinctGenreQry = (from d in db.Movies
+                                    orderby d.Genre
+                                    select d.Genre).Distinct();
+            GenreListing.AddRange(DistinctGenreQry);
+            ViewBag.SelectListGenre = new SelectList(GenreListing);
             return View(db.Movies.ToList());
         }
 

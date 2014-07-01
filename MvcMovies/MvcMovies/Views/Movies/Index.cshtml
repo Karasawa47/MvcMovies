@@ -5,7 +5,8 @@
 }
 
 <h2>Index</h2>
-
+Select Genre: @Html.DropDownList("GenreList",(IEnumerable<SelectListItem>)ViewBag.SelectListGenre)
+Select Title: @Html.TextBox("hello","")
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
