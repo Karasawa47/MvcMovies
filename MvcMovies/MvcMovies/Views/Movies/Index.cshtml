@@ -4,9 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Movie List</h2>
+
 Select Genre: @Html.DropDownList("GenreList",(IEnumerable<SelectListItem>)ViewBag.SelectListGenre)
 Select Title: @Html.TextBox("hello","")
+@Html.ActionLink("Select","Index","GenreList","hello")
+    @*@Html.ActionLink("Back to List", "Index")*@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
